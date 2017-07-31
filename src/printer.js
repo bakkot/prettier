@@ -1551,6 +1551,12 @@ function genericPrintNoParens(path, options, print, args) {
         n.finalizer ? concat([" finally ", path.call(print, "finalizer")]) : ""
       ]);
     case "CatchClause":
+      if (n.param === null) {
+        return concat([
+          "catch ",
+          path.call(print, "body")
+        ]);
+      }
       return concat([
         "catch (",
         path.call(print, "param"),
