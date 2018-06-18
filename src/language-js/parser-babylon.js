@@ -12,6 +12,7 @@ function parse(text, parsers, opts) {
     sourceType: "module",
     allowImportExportEverywhere: true,
     allowReturnOutsideFunction: true,
+    allowSuperOutsideMethod: true,
     plugins: [
       "jsx",
       "flow",
